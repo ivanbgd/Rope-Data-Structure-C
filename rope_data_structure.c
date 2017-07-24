@@ -85,14 +85,14 @@ static inline SplayTree *createTree(void) {
 }
 
 /* We need post-order binary tree traversal to free all nodes.
- * Input is a pointer to a tree.
+ * Input is pointer to a tree.
  * This is a usual post-order binary tree traversal in which visit() conducts freeing a node.
  * This is iterative version, because it's several times faster than recursive.
  * A (little) speed-up can be gained by allocating stack statically instead of dynamically. */
 static void postOrderFree(SplayTree *tree) {
-    unsigned n = tree->size;                                    // unsigned n = tree->size;
+    unsigned n = tree->size;
     Node **stack = malloc(n * sizeof(*stack));                  // stack contains pointers to nodes
-    unsigned size = 0;											// current stack size
+    unsigned size = 0;                                          // current stack size
     char *boolStack = malloc(n * sizeof(*boolStack));           // For each element on the node stack, a corresponding value is stored on the bool stack. If this value is true, then we need to pop and visit the node on next encounter.
     unsigned boolSize = 0;
     char alreadyEncountered;                                    // boolean
