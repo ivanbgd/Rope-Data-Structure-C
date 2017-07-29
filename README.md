@@ -12,7 +12,7 @@ Uses Splay tree to implement the Rope data structure.
 Nodes don't have keys. They only have values. And the value is a character.
 That means that one node contains and represents a single character.
 This data structure is about strings. The string represents (is) contents of a text document.
-In a string, character are in order, of course. The order is represented by their rank. That's why we use
+In a string, characters are in order, of course. The order is represented by their rank. That's why we use
 order statistics to locate a node when searching for it (performing a "find" operation).
 The rank can be seen as their index, and we'll use 0-based indexing.
 The size of a node doesn't have anything to do with its rank. Also, when a node is splayed, its rank doesn't
