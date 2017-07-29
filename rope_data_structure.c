@@ -8,16 +8,16 @@
 /* Implementation of a data structure that can store a string and efficiently cut a part
  * (a substring) of this string and insert it in a different position.
  * This implementation only processes a given string.
- * It doesn't support inserting of new characters in the string. */
+ * It doesn't support insertion of new characters in the string. */
 
 /* https://en.wikipedia.org/wiki/Rope_(data_structure) */
 
 /* Uses Splay tree to implement the Rope data structure */
 
-/* Nodes don't have keys. They only have values. And the value is a lowercase English letter.
- * That means that one node contains and represents a single letter.
+/* Nodes don't have keys. They only have values. And the value is a character.
+ * That means that one node contains and represents a single character.
  * This data structure is about strings. The string represents (is) contents of a text document.
- * In a string, letters are in order, of course. The order is represented by their rank. That's why we use
+ * In a string, characters are in order, of course. The order is represented by their rank. That's why we use
  * order statistics to locate a node when searching for it (performing a "find" operation).
  * The rank can be seen as their index, and we'll use 0-based indexing.
  * The size of a node doesn't have anything to do with its rank. Also, when a node is splayed, its rank doesn't
@@ -85,14 +85,14 @@ static inline SplayTree *createTree(void) {
 }
 
 /* We need post-order binary tree traversal to free all nodes.
- * Input is pointer to a tree.
+ * Input is a pointer to a tree.
  * This is a usual post-order binary tree traversal in which visit() conducts freeing a node.
  * This is iterative version, because it's several times faster than recursive.
  * A (little) speed-up can be gained by allocating stack statically instead of dynamically. */
 static void postOrderFree(SplayTree *tree) {
-    unsigned n = tree->size;
+    unsigned n = tree->size;                                    // unsigned n = tree->size;
     Node **stack = malloc(n * sizeof(*stack));                  // stack contains pointers to nodes
-    unsigned size = 0;                                          // current stack size
+    unsigned size = 0;											// current stack size
     char *boolStack = malloc(n * sizeof(*boolStack));           // For each element on the node stack, a corresponding value is stored on the bool stack. If this value is true, then we need to pop and visit the node on next encounter.
     unsigned boolSize = 0;
     char alreadyEncountered;                                    // boolean
