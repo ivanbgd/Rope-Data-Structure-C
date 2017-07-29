@@ -478,6 +478,7 @@ void process(SplayTree **tree, unsigned i, unsigned j, unsigned k) {
  * Constraints:
  * 0 <= i <= j <= n - 1
  * 0 <= k <= n - (j - i + 1)
+ * We can't use blanks.
  */
 
 int main() {
