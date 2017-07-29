@@ -475,6 +475,9 @@ void process(SplayTree **tree, unsigned i, unsigned j, unsigned k) {
  * For i and j, counting starts from 0; for k, counting starts from 1.
  * The code will cut the substring S[i..j] from S and insert it after the k-th character of
  * the remaining string. If k == 0, it inserts the substring at the beginning.
+ * Constraints:
+ * 0 <= i <= j <= n - 1
+ * 0 <= k <= n - (j - i + 1)
  */
 
 int main() {
