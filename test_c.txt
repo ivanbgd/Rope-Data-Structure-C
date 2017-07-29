@@ -1,0 +1,30 @@
+Input:
+
+eveHeryllo_!body
+3
+3 4 0
+2 6 6
+11 11 15
+
+
+Output:
+
+Hello_everybody!
+
+
+How does it work?
+
+First, we input numOps, which is 3.
+Than, we input the three operations, which give:
+
+Heeveryllo_!body
+Hello_every!body
+Hello_everybody!
+
+
+Each operation consists of i, j & k, which are described in the source file.
+n is length of the string, here 16.
+
+Constraints:
+0 <= i <= j <= n - 1
+0 <= k <= n - (j - i + 1)
