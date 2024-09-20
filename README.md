@@ -1,8 +1,8 @@
-# Rope-Data-Structure-C
+# Rope Data Structure in C
 
 ## Description
 
-Implementation of a data structure that can store a string and efficiently cut a part
+A *C* implementation of a data structure that can store a string and efficiently cut a part
 (a substring) of this string and insert it in a different position.
 
 The current implementation only processes a given string.
